@@ -1,8 +1,8 @@
 //<INPUT>
-// Сніппет (HTML): inp
-input[type="text"],
-input[type="email"],
-input[type="tel"],
+//  (HTML): inp
+input[type='text'],
+input[type='email'],
+input[type='tel'],
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -15,7 +15,7 @@ input::-webkit-inner-spin-button {
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield; /* Firefox */
 }
 .input {

@@ -1,0 +1,120 @@
+.about {
+  margin: rem(30) 0 0;
+
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &-img {
+    position: relative;
+    margin: rem(60) 0 0;
+    min-height: rem(440);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: rem(40);
+    overflow: hidden;
+
+    @media (max-width: $mobile) {
+      min-height: rem(310);
+      margin: rem(36) 0 0;
+    }
+
+    &__text {
+      position: relative;
+      z-index: 1;
+      padding: rem(40) rem(140);
+
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: rem(52);
+      line-height: 115%;
+      letter-spacing: -0.03em;
+      color: cl(whte);
+
+      @media (max-width: $mobile) {
+        padding: rem(20);
+        font-size: rem(26);
+        text-align: center;
+      }
+    }
+
+    &__item {
+      position: absolute;
+      inset: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &-text {
+    margin: rem(60) 0 0;
+    padding: 0 0 rem(60);
+
+    @media (max-width: $mobile) {
+      margin: rem(30) 0 0;
+      padding: 0 0 rem(40);
+    }
+
+    p {
+      font-weight: 400;
+      font-size: rem(24);
+      line-height: 150%;
+      color: cl(drk);
+
+      @media (max-width: $mobile) {
+        font-size: rem(14);
+      }
+
+      &:not(:first-child) {
+        margin: rem(40) 0 0;
+
+        @media (max-width: $mobile) {
+          margin: rem(44) 0 0;
+        }
+      }
+
+      a {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: cl(grn);
+      }
+    }
+  }
+
+  &-row {
+    margin: rem(60) 0 0;
+
+    @media (max-width: $mobile) {
+      margin: rem(80) 0 0;
+    }
+
+    &__title {
+    }
+
+    &__items {
+      margin: rem(40) 0 0;
+      display: flex;
+      gap: rem(2);
+
+      @media (max-width: $mobile) {
+        flex-wrap: wrap;
+      }
+
+      .category {
+        flex: 0 0 calc(25% - rem(1.5));
+
+        @media (max-width: $mobile) {
+          flex: 0 0 calc(50% - rem(1));
+        }
+      }
+    }
+  }
+}

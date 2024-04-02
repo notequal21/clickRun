@@ -1,0 +1,172 @@
+.registration_modal {
+  width: 100%;
+  max-width: rem(800);
+
+  &.cart_modal {
+    max-width: rem(600);
+  }
+
+  &.review_modal {
+    max-width: rem(884);
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+  }
+
+  &-item {
+    display: flex;
+    gap: rem(20);
+
+    &__img {
+      flex: 0 0 auto;
+      width: rem(82);
+      height: rem(89);
+      border-radius: rem(20);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+
+      &-name {
+      }
+
+      &-price {
+      }
+    }
+  }
+
+  &-controls {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    &__btn {
+    }
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+
+  &__button {
+  }
+}
+
+.review_modal {
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    @media (max-width: $mobile) {
+      gap: rem(10);
+    }
+
+    &__item {
+      display: flex;
+      gap: rem(20);
+
+      &-img {
+        flex: 0 0 auto;
+        width: rem(82);
+        height: rem(82);
+        border-radius: rem(20);
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-name {
+      }
+    }
+
+    &__stars {
+      display: flex;
+      justify-content: center;
+
+      &-items {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: rem(30);
+
+        @media (max-width: 400px) {
+          gap: 0;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        label {
+          flex: 0 0 auto;
+          cursor: pointer;
+          position: relative;
+
+          svg {
+            flex: 0 0 auto;
+            width: rem(40);
+            height: rem(40);
+            cursor: pointer;
+            transition: all $time $tr;
+          }
+
+          &:hover,
+          &:hover ~ label {
+            svg {
+              fill: cl(grn);
+            }
+          }
+        }
+
+        input {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          cursor: pointer;
+          pointer-events: none;
+
+          &:checked + svg,
+          &:checked ~ label {
+            fill: cl(grn);
+
+            svg {
+              fill: cl(grn);
+            }
+          }
+        }
+      }
+    }
+
+    .input {
+      &._small {
+        textarea {
+          min-height: rem(80);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: rem(160);
+        transition:
+          all $time $tr,
+          height 0s ease;
+      }
+    }
+  }
+}

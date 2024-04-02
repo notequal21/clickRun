@@ -1,5 +1,5 @@
 // Базові стилі спойлерів
-// Сніппет (HTML): spoller
+//  (HTML): spoller
 
 // Блок зі спойлерами
 .spollers {
@@ -28,7 +28,7 @@
     cursor: pointer;
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       right: 10px;
       top: 50%;

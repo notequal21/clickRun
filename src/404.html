@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{ "title":"HomePage" })
+
+<body>
+  <div class="wrapper">
+    @@include('components/header/header.html',{})
+
+    @@include('components/catalog/catalog.html',{})
+
+    <main class="page">
+      <div class="search_results">
+        <div class="search_results__container">
+
+          <div class="search_results-body">
+            <div class="search_results-body__icon">
+              <img src="./img/icons/search-results.svg" alt="">
+            </div>
+            <div class="search_results-body__text text">
+              404 <br> Такой страницы не существует, или она была перемещена
+            </div>
+            <a href="" class="search_results-body__link btn btn_md btn_radius40 btn_grey _404">
+              Вернуться на главную
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    @@include('components/footer/footer.html',{})
+    @@include('html/_popup.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

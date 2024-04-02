@@ -1,12 +1,12 @@
 // Общий файл элементов форм
 // Для подключения/отключения стилей конкретного элемента формы смотрите base/forms/forms.scss
-@import "base/forms/forms";
+@import 'base/forms/forms';
 
 // Стили меню + бургер
 // @import "base/menu";
 
 // Стили попапов
-@import "base/popup";
+@import 'base/popup';
 
 //Стили спойлеров
 // @import "base/spollers";
@@ -34,7 +34,6 @@
 // Styles for ripple effect
 // @import "base/ripple";
 
-// Стилі для кастомного курсора
 // Styles for custom cursor
 // @import "base/cursor";
 

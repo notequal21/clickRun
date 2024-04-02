@@ -1,0 +1,19 @@
+.lk_layout-orders {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+
+    &-item {
+    }
+  }
+
+  &__more {
+    margin: rem(70) 0 0;
+    width: 100%;
+
+    @media (max-width: $mobile) {
+      margin: rem(50) 0 0;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+.catalog {
+  position: fixed;
+  z-index: 11;
+  inset: 0;
+  background: cl(whte);
+
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, -100%);
+
+  transition: all $time $tr;
+
+  &._open {
+    pointer-events: unset;
+    user-select: unset;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0);
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: rem(10);
+    right: 20px;
+  }
+
+  &-body {
+    padding: rem(72) 0 rem(30);
+    display: flex;
+    gap: rem(2);
+    height: 100vh;
+  }
+
+  &-col {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+    flex: 0 0 calc(33.333% - rem(1.333));
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: rem(6);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: cl(gry-10);
+      border-radius: rem(20);
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+      background-color: transparent;
+      height: rem(20);
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:increment {
+      background-color: transparent;
+      height: rem(20);
+    }
+
+    &_submenu {
+      overflow-y: unset;
+      padding: 0;
+      overflow-y: visible;
+      background: cl(gry-4);
+      border-radius: rem(20);
+
+      display: none;
+
+      &._open {
+        display: flex;
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: rem(11) rem(20);
+    justify-content: flex-start;
+    border-color: transparent;
+
+    &:hover {
+      border-color: transparent;
+
+      color: cl(grn);
+
+      svg {
+        path {
+          stroke: cl(grn);
+        }
+      }
+    }
+
+    &._active {
+      border-color: cl(gry-10);
+      color: cl(grn);
+
+      svg {
+        path {
+          stroke: cl(grn);
+        }
+      }
+    }
+  }
+
+  &-submenu {
+    flex-direction: column;
+    gap: rem(2);
+    width: calc(100% - rem(6));
+    padding: rem(20) rem(24) rem(20) rem(20);
+    overflow-y: auto;
+
+    display: none;
+    &._active {
+      display: flex;
+    }
+
+    &::-webkit-scrollbar {
+      width: rem(6);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: cl(gry-10);
+      border-radius: rem(20);
+    }
+
+    &::-webkit-scrollbar-button:vertical:start:decrement {
+      background-color: transparent;
+      height: rem(20);
+    }
+
+    &::-webkit-scrollbar-button:vertical:end:increment {
+      background-color: transparent;
+      height: rem(20);
+    }
+
+    .catalog__btn {
+      padding: rem(15) rem(20) rem(15) rem(40);
+      background: transparent;
+    }
+  }
+}

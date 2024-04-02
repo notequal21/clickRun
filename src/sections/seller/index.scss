@@ -1,0 +1,100 @@
+@import './profile/profile.scss';
+@import './balance/balance.scss';
+@import './goods/goods.scss';
+@import './orders/orders.scss';
+@import './purchases/purchases.scss';
+@import './create/create.scss';
+
+.lk_layout {
+  margin: rem(50) 0 0;
+
+  @media (max-width: $tablet) {
+    margin: rem(60) 0 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(100);
+
+    @media (max-width: $pc) {
+      gap: rem(20);
+    }
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      justify-content: unset;
+      gap: rem(50);
+    }
+  }
+
+  &-menu {
+    padding: rem(140) 0 0;
+    flex: 0 0 rem(336);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: rem(2);
+    }
+
+    @media (max-width: $tablet) {
+      flex: 0 0 auto;
+      padding: 0;
+
+      ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        li {
+          flex: 0 0 calc(50% - rem(1));
+        }
+      }
+    }
+
+    @media (max-width: 340px) {
+      ul {
+        li {
+          flex: 0 0 100%;
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(70);
+    flex: 1 1 auto;
+
+    @media (max-width: $tablet) {
+      gap: rem(50);
+    }
+
+    &_balance {
+      gap: rem(45);
+
+      @media (max-width: $tablet) {
+        gap: rem(70);
+      }
+    }
+
+    &__title {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+
+      &._mobile {
+        display: none;
+
+        @media (max-width: $tablet) {
+          display: block;
+        }
+      }
+    }
+  }
+}

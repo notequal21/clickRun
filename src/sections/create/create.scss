@@ -1,0 +1,62 @@
+.create {
+  margin: rem(30) 0 0;
+
+  &__container {
+  }
+
+  &__title {
+  }
+
+  &-text {
+    margin: rem(60) 0 0 auto;
+    max-width: rem(655);
+
+    @media (max-width: $mobile) {
+      margin: rem(30) 0 0;
+      max-width: 100%;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: rem(24);
+      line-height: 150%;
+      color: cl(drk);
+
+      @media (max-width: $mobile) {
+        font-size: rem(14);
+      }
+
+      &:not(:first-child) {
+        margin: rem(36) 0 0;
+
+        @media (max-width: $mobile) {
+          margin: rem(22) 0 0;
+        }
+      }
+
+      a {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: cl(grn);
+      }
+    }
+  }
+
+  &__img {
+    margin: rem(120) 0 0;
+    border-radius: rem(40);
+    height: rem(440);
+    overflow: hidden;
+
+    @media (max-width: $mobile) {
+      margin: rem(90) 0 0;
+      height: rem(170);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

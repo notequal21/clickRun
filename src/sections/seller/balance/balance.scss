@@ -1,0 +1,261 @@
+.lk_layout {
+  &-balance {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $mobile) {
+      justify-content: unset;
+      flex-direction: column;
+      gap: rem(30);
+    }
+
+    &__col {
+      &:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        @media (max-width: $mobile) {
+          align-items: flex-start;
+        }
+      }
+
+      &-text {
+        @media (max-width: $mobile) {
+          font-size: rem(12);
+        }
+      }
+
+      &-value {
+        margin: rem(30) 0 0;
+
+        font-family: 'Manrope', sans-serif;
+        font-weight: 600;
+        font-size: rem(58);
+        line-height: 75%;
+        color: cl(drk);
+
+        @media (max-width: $mobile) {
+          margin: rem(10) 0 0;
+          font-size: rem(40);
+        }
+
+        span {
+          font-size: rem(16);
+
+          @media (max-width: $mobile) {
+          }
+        }
+      }
+
+      &-btn {
+        margin: rem(20) 0 0;
+        padding: rem(14) rem(39);
+
+        @media (max-width: $mobile) {
+          margin: rem(10) 0 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &-withdraw {
+    &__top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(20);
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+        gap: rem(20);
+      }
+
+      .text {
+        flex: 0 0 100%;
+      }
+
+      &-col {
+        flex: 0 0 calc(50% - rem(10));
+
+        @media (max-width: $mobile) {
+          flex: 0 0 auto;
+        }
+      }
+
+      &-type {
+        flex: 1 1 auto;
+        display: flex;
+        gap: rem(2);
+
+        @media (max-width: $mobile) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &-bank {
+        display: flex;
+        flex: 1 1 auto;
+        gap: rem(30);
+        justify-content: flex-end;
+
+        @media (max-width: $mobile) {
+          justify-content: flex-start;
+          justify-content: space-between;
+          gap: rem(10);
+          flex-wrap: wrap;
+          max-width: rem(400);
+        }
+
+        li {
+          width: rem(54);
+          height: rem(54);
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+
+    &__inputs {
+      margin: rem(40) 0 0;
+
+      flex-wrap: wrap;
+      gap: rem(20);
+
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+
+      .input {
+        flex: 0 0 calc(50% - rem(10));
+
+        @media (max-width: $mobile) {
+          flex: 1 1 100%;
+        }
+      }
+
+      .row {
+        flex: 1 1 100%;
+        .input {
+          width: 100%;
+          flex: 1 1 100%;
+        }
+      }
+    }
+
+    &__btn {
+      margin: rem(54) 0 0;
+      width: 100%;
+    }
+  }
+
+  &-history {
+    margin: rem(45) 0 0;
+    border-collapse: separate;
+    border-spacing: 0 rem(10);
+
+    @media (max-width: $mobile) {
+      border-spacing: 0;
+      margin: 0;
+    }
+
+    tr {
+      th,
+      td {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 150%;
+        padding: rem(8.5) rem(20);
+        text-align: left;
+
+        @media (max-width: $mobile) {
+          font-size: rem(14);
+        }
+
+        &:nth-child(1) {
+          width: 47%;
+        }
+        &:nth-child(2) {
+          width: 29%;
+        }
+        &:nth-child(3) {
+          width: 29%;
+          text-align: right;
+        }
+      }
+    }
+
+    thead {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+
+      tr {
+        th {
+          color: cl(gry-40);
+
+          padding: rem(0) rem(20) rem(20);
+        }
+      }
+    }
+
+    tbody {
+      @media (max-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+      }
+
+      tr {
+        @media (max-width: $mobile) {
+          display: flex;
+          flex-direction: column;
+          padding: rem(10) rem(20);
+          border: rem(1.5) dashed cl(gry-10);
+          border-radius: rem(20);
+        }
+
+        td {
+          color: cl(drk);
+          border-top: rem(1.5) dashed cl(gry-10);
+          border-bottom: rem(1.5) dashed cl(gry-10);
+
+          &:first-child {
+            border-left: rem(1.5) dashed cl(gry-10);
+            border-radius: rem(20) 0 0 rem(20);
+          }
+
+          &:last-child {
+            border-right: rem(1.5) dashed cl(gry-10);
+            border-radius: 0 rem(20) rem(20) 0;
+          }
+
+          @media (max-width: $mobile) {
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+            text-align: left !important;
+
+            &:nth-child(2) {
+              margin: rem(10) 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    &__btn {
+      margin: rem(-20) 0 0;
+
+      @media (max-width: $mobile) {
+        margin: rem(-50) 0 0;
+      }
+    }
+  }
+}

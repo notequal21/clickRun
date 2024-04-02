@@ -1,4 +1,85 @@
 <header class="header">
   <div class="header__container">
+    <div class="header-top">
+      <div class="header-top__logo">
+        <img src="./img/logo.svg" alt="">
+      </div>
+      <div class="header-buttons">
+        <a class="btn btn_link">
+          О сервисе
+        </a>
+        <a class="btn btn_svg btn_link">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10.667 15.9998H16.0003M16.0003 15.9998H21.3337M16.0003 15.9998V10.6665M16.0003 15.9998V21.3332M16.0003 29.3332C23.3643 29.3332 29.3337 23.3638 29.3337 15.9998C29.3337 8.63584 23.3643 2.6665 16.0003 2.6665C8.63633 2.6665 2.66699 8.63584 2.66699 15.9998C2.66699 23.3638 8.63633 29.3332 16.0003 29.3332Z"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Открыть магазин
+        </a>
+        <a class="btn btn_link">
+          Вход / Регистрация
+        </a>
+        <div class="header-buttons__cart control">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 8.00033H29.3333L25.3333 21.3337H8L4 8.00033ZM4 8.00033L3 4.66699M14.6667 26.0003C14.6667 26.5308 14.456 27.0395 14.0809 27.4145C13.7058 27.7896 13.1971 28.0003 12.6667 28.0003C12.1362 28.0003 11.6275 27.7896 11.2525 27.4145C10.8774 27.0395 10.6667 26.5308 10.6667 26.0003M22.6667 26.0003C22.6667 26.5308 22.456 27.0395 22.0809 27.4145C21.7058 27.7896 21.1971 28.0003 20.6667 28.0003C20.1362 28.0003 19.6275 27.7896 19.2525 27.4145C18.8774 27.0395 18.6667 26.5308 18.6667 26.0003"
+              stroke="#00BD78" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="header-body">
+      <button class="header-body__catalog btn btn_svg _open-catalog">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 25.333H14.6667M4 15.9997H21.3333M4 6.66634H28" stroke="white" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Каталог
+      </button>
+      <form class="header-search">
+        <div class="header-search__tips">
+          <button class="btn btn_xs btn_noBorder _text-green">
+            Волк
+          </button>
+          <button class="btn btn_xs btn_noBorder _text-green">
+            Ворона
+          </button>
+          <button class="btn btn_xs btn_noBorder _text-green">
+            Вор
+          </button>
+          <button class="btn btn_xs btn_noBorder _text-green">
+            Воробей
+          </button>
+        </div>
+
+        <!-- <div class="header-search__select">
+          Все
+        </div> -->
+        <div class="header-search__select">
+          <select>
+            <option value="1">Все категории</option>
+            <option value="2">Графика</option>
+            <option value="3">Графика</option>
+            <option value="4">Графика</option>
+            <option value="5">Графика</option>
+          </select>
+        </div>
+
+        <input type="text" placeholder="Искать на ClickRun" class="header-search__input">
+        <div class="header-search__close ">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.01074 22.9906L16.0014 15.9999L22.9921 22.9906M22.9921 9.00928L16.0001 15.9999L9.01074 9.00928"
+              stroke="#0D0A18" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="header-search__button">
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M19.6667 19.6667L25 25M1 11.6667C1 14.4956 2.12381 17.2088 4.12419 19.2091C6.12458 21.2095 8.83769 22.3333 11.6667 22.3333C14.4956 22.3333 17.2088 21.2095 19.2091 19.2091C21.2095 17.2088 22.3333 14.4956 22.3333 11.6667C22.3333 8.83769 21.2095 6.12458 19.2091 4.12419C17.2088 2.12381 14.4956 1 11.6667 1C8.83769 1 6.12458 2.12381 4.12419 4.12419C2.12381 6.12458 1 8.83769 1 11.6667Z"
+              stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </form>
+    </div>
   </div>
 </header>

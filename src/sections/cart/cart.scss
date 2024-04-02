@@ -1,0 +1,149 @@
+.cart {
+  &__container {
+  }
+
+  &__title {
+    margin: rem(30) 0 0;
+
+    @media (max-width: $mobile) {
+      margin: rem(60) 0 0;
+    }
+  }
+
+  &-body {
+    margin: rem(50) 0 0;
+    display: flex;
+    gap: rem(20);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+    @media (max-width: $mobile) {
+      margin: rem(86) 0 0;
+    }
+  }
+
+  &-col {
+    flex: 0 0 calc(50% - rem(10));
+
+    @media (max-width: $mobile) {
+      flex: 0 0 auto;
+    }
+
+    &_items {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+    }
+  }
+
+  &-info {
+    padding: rem(40);
+    box-shadow: 0 0 rem(25) 0 rgba(0, 0, 0, 0.12);
+    background: cl(whte);
+    border-radius: rem(40);
+
+    @media (max-width: $mobile) {
+      padding: rem(40) rem(20) rem(20);
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:first-child) {
+        margin: rem(20) 0 0;
+      }
+      &:nth-child(2) {
+        margin: rem(30) 0 0;
+      }
+    }
+
+    &__sum {
+      margin: rem(20) 0 0;
+      padding: rem(20) 0;
+      border-top: rem(1.5) dashed cl(gry-10);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        font-weight: 600;
+        font-size: rem(28);
+        line-height: 115%;
+        letter-spacing: -0.04em;
+        color: cl(drk);
+
+        @media (max-width: $mobile) {
+          font-size: rem(24);
+        }
+
+        &:nth-child(2) {
+          font-size: rem(26);
+          letter-spacing: normal;
+
+          @media (max-width: $mobile) {
+            font-size: rem(14);
+          }
+        }
+
+        ._cur {
+          font-weight: 400;
+          font-size: rem(16);
+
+          @media (max-width: $mobile) {
+            font-size: rem(14);
+          }
+        }
+      }
+    }
+
+    &__inputs {
+      display: flex;
+      gap: rem(20);
+      margin: rem(10) 0 0;
+
+      @media (max-width: $mobile) {
+        flex-wrap: wrap;
+      }
+
+      &-item {
+        flex: 0 0 calc(50% - rem(10));
+        gap: rem(28);
+        justify-content: space-between;
+
+        input {
+          margin: auto 0 0;
+        }
+
+        .form__error {
+          margin: rem(-24) 0 0 auto;
+        }
+
+        @media (max-width: $mobile) {
+          flex: 1 1 100%;
+          gap: rem(10);
+
+          .form__error {
+            margin: rem(-6) 0 0 auto;
+          }
+        }
+
+        .text {
+          font-size: rem(12);
+        }
+      }
+    }
+
+    &__agree {
+      margin: rem(30) 0;
+
+      @media (max-width: $mobile) {
+      }
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}

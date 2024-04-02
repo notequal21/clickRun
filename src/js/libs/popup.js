@@ -4,10 +4,17 @@
 // Сниппет (HTML): pl
 
 // Подключение функционала "Чертоги Фрилансера"
-import { flsModules } from "../files/modules.js";
-import api from "../files/api.js";
-import * as flsForms from "../files/forms/forms.js";
-import { isMobile, bodyLockStatus, bodyLock, bodyUnlock, bodyLockToggle, FLS } from "../files/functions.js";
+import { flsModules } from '../files/modules.js';
+import api from '../files/api.js';
+import * as flsForms from '../files/forms/forms.js';
+import {
+  isMobile,
+  bodyLockStatus,
+  bodyLock,
+  bodyUnlock,
+  bodyLockToggle,
+  FLS,
+} from '../files/functions.js';
 
 // Клас Popup
 class Popup {
@@ -16,21 +23,21 @@ class Popup {
       logging: true,
       init: true,
       //Для кнопок
-      attributeOpenButton: "data-popup", // Атрибут для кнопки, яка открывает попап
-      attributeCloseButton: "data-close", // Атрибут для кнопки, що закривает попап
+      attributeOpenButton: 'data-popup', // Атрибут для кнопки, яка открывает попап
+      attributeCloseButton: 'data-close', // Атрибут для кнопки, що закривает попап
       // Для сторонніх об'єктів
-      fixElementSelector: "[data-lp]", //Атрибут для элементов с левым паддингом (fixed)
+      fixElementSelector: '[data-lp]', //Атрибут для элементов с левым паддингом (fixed)
       // Для об'єкту попапа
-      youtubeAttribute: "data-popup-youtube", // Атрибут для коду youtube
-      youtubePlaceAttribute: "data-popup-youtube-place", // Атрибут для вставки ролика youtube
+      youtubeAttribute: 'data-popup-youtube', // Атрибут для коду youtube
+      youtubePlaceAttribute: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
       setAutoplayYoutube: true,
       // Зміна класів
       classes: {
-        popup: "popup",
+        popup: 'popup',
         // popupWrapper: 'popup__wrapper',
-        popupContent: "popup__content",
-        popupActive: "popup_show", // Додається для попапа, коли він відкривається
-        bodyActive: "popup-show", // Додається для боді, коли попап відкритий
+        popupContent: 'popup__content',
+        popupActive: 'popup_show', // Додається для попапа, коли він відкривається
+        bodyActive: 'popup-show', // Додається для боді, коли попап відкритий
       },
       focusCatch: true, // Фокус усередині попапа зациклений
       closeEsc: true, // Закриття ESC
@@ -71,7 +78,19 @@ class Popup {
     this._selectorOpen = false;
 
     this.lastFocusEl = false;
-    this._focusEl = ["a[href]", 'input:not([disabled]):not([type="hidden"]):not([aria-hidden])', "button:not([disabled]):not([aria-hidden])", "select:not([disabled]):not([aria-hidden])", "textarea:not([disabled]):not([aria-hidden])", "area[href]", "iframe", "object", "embed", "[contenteditable]", '[tabindex]:not([tabindex^="-"])'];
+    this._focusEl = [
+      'a[href]',
+      'input:not([disabled]):not([type="hidden"]):not([aria-hidden])',
+      'button:not([disabled]):not([aria-hidden])',
+      'select:not([disabled]):not([aria-hidden])',
+      'textarea:not([disabled]):not([aria-hidden])',
+      'area[href]',
+      'iframe',
+      'object',
+      'embed',
+      '[contenteditable]',
+      '[tabindex]:not([tabindex^="-"])',
+    ];
     //this.options = Object.assign(config, options);
     this.options = {
       ...config,
@@ -100,10 +119,10 @@ class Popup {
     console.log(link);
     api.load({
       url: link,
-      format: "text",
+      format: 'text',
       cb: (responseResult) => {
         const parser = new DOMParser();
-        const response = parser.parseFromString(responseResult, "text/html");
+        const response = parser.parseFromString(responseResult, 'text/html');
         const el = response.querySelector(selector);
         document.body.appendChild(el);
 
@@ -117,28 +136,43 @@ class Popup {
   }
   eventsPopup() {
     document.addEventListener(
-      "click",
+      'click',
       async function (e) {
-        const buttonOpen = e.target.closest(`[${this.options.attributeOpenButton}]`);
+        const buttonOpen = e.target.closest(
+          `[${this.options.attributeOpenButton}]`
+        );
         if (buttonOpen) {
           e.preventDefault();
-          this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ? buttonOpen.getAttribute(this.options.attributeOpenButton) : "error";
+          this._dataValue = buttonOpen.getAttribute(
+            this.options.attributeOpenButton
+          )
+            ? buttonOpen.getAttribute(this.options.attributeOpenButton)
+            : 'error';
 
           await this.getModal(buttonOpen.href, this._dataValue);
-          if (this._dataValue !== "error") {
+          if (this._dataValue !== 'error') {
             if (!this.isOpen) this.lastFocusEl = buttonOpen;
             this.targetOpen.selector = `${this._dataValue}`;
             this._selectorOpen = true;
             this.open();
 
             return;
-          } else this.popupLogging(`Йой, не заповнено атрибут у ${buttonOpen.classList}`);
+          } else
+            this.popupLogging(
+              `Йой, не заповнено атрибут у ${buttonOpen.classList}`
+            );
 
           return;
         }
         // Закриття на порожньому місці (popup__wrapper) та кнопки закриття (popup__close) для закриття
-        const buttonClose = e.target.closest(`[${this.options.attributeCloseButton}]`);
-        if (buttonClose || (!e.target.closest(`.${this.options.classes.popupContent}`) && this.isOpen)) {
+        const buttonClose = e.target.closest(
+          `[${this.options.attributeCloseButton}]`
+        );
+        if (
+          buttonClose ||
+          (!e.target.closest(`.${this.options.classes.popupContent}`) &&
+            this.isOpen)
+        ) {
           e.preventDefault();
           this.close();
           return;
@@ -147,9 +181,14 @@ class Popup {
     );
     // Закриття ESC
     document.addEventListener(
-      "keydown",
+      'keydown',
       function (e) {
-        if (this.options.closeEsc && e.which == 27 && e.code === "Escape" && this.isOpen) {
+        if (
+          this.options.closeEsc &&
+          e.which == 27 &&
+          e.code === 'Escape' &&
+          this.isOpen
+        ) {
           e.preventDefault();
           this.close();
           return;
@@ -164,7 +203,7 @@ class Popup {
     if (this.options.hashSettings.goHash) {
       // Перевірка зміни адресного рядка
       window.addEventListener(
-        "hashchange",
+        'hashchange',
         function () {
           if (window.location.hash) {
             this._openToHash();
@@ -175,7 +214,7 @@ class Popup {
       );
 
       window.addEventListener(
-        "load",
+        'load',
         function () {
           if (window.location.hash) {
             this._openToHash();
@@ -186,9 +225,16 @@ class Popup {
   }
   open(selectorValue) {
     if (bodyLockStatus) {
-      this.bodyLock = document.documentElement.classList.contains("lock") && !this.isOpen ? true : false;
+      this.bodyLock =
+        document.documentElement.classList.contains('lock') && !this.isOpen
+          ? true
+          : false;
 
-      if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
+      if (
+        selectorValue &&
+        typeof selectorValue === 'string' &&
+        selectorValue.trim() !== ''
+      ) {
         this.targetOpen.selector = selectorValue;
         this._selectorOpen = true;
       }
@@ -196,10 +242,13 @@ class Popup {
         this._reopen = true;
         this.close();
       }
-      if (!this._selectorOpen) this.targetOpen.selector = this.lastClosed.selector;
+      if (!this._selectorOpen)
+        this.targetOpen.selector = this.lastClosed.selector;
       if (!this._reopen) this.previousActiveElement = document.activeElement;
 
-      this.targetOpen.element = document.querySelector(this.targetOpen.selector);
+      this.targetOpen.element = document.querySelector(
+        this.targetOpen.selector
+      );
 
       if (this.targetOpen.element) {
         if (this.options.hashSettings.location) {
@@ -209,7 +258,7 @@ class Popup {
 
         this.options.on.beforeOpen(this);
         document.dispatchEvent(
-          new CustomEvent("beforePopupOpen", {
+          new CustomEvent('beforePopupOpen', {
             detail: {
               popup: this,
             },
@@ -223,7 +272,7 @@ class Popup {
           !this.bodyLock ? bodyLock() : null;
         } else this._reopen = false;
 
-        this.targetOpen.element.setAttribute("aria-hidden", "false");
+        this.targetOpen.element.setAttribute('aria-hidden', 'false');
 
         // Запам'ятаю це відчинене вікно. Воно буде останнім відкритим
         this.previousOpen.selector = this.targetOpen.selector;
@@ -239,18 +288,23 @@ class Popup {
 
         this.options.on.afterOpen(this);
         document.dispatchEvent(
-          new CustomEvent("afterPopupOpen", {
+          new CustomEvent('afterPopupOpen', {
             detail: {
               popup: this,
             },
           })
         );
         this.popupLogging(`Открыл попап`);
-      } else this.popupLogging(`Ей, такого попа нет. Проверьте правильность ввода.`);
+      } else
+        this.popupLogging(`Ей, такого попа нет. Проверьте правильность ввода.`);
     }
   }
   close(selectorValue, timer = 800) {
-    if (selectorValue && typeof selectorValue === "string" && selectorValue.trim() !== "") {
+    if (
+      selectorValue &&
+      typeof selectorValue === 'string' &&
+      selectorValue.trim() !== ''
+    ) {
       this.previousOpen.selector = selectorValue;
     }
     if (!this.isOpen || !bodyLockStatus) {
@@ -260,18 +314,22 @@ class Popup {
     this.options.on.beforeClose(this);
     // Створюємо свою подію перед закриттям попапа
     document.dispatchEvent(
-      new CustomEvent("beforePopupClose", {
+      new CustomEvent('beforePopupClose', {
         detail: {
           popup: this,
         },
       })
     );
 
-    this.previousOpen.element.classList.remove(this.options.classes.popupActive);
+    this.previousOpen.element.classList.remove(
+      this.options.classes.popupActive
+    );
     // aria-hidden
-    this.previousOpen.element.setAttribute("aria-hidden", "true");
+    this.previousOpen.element.setAttribute('aria-hidden', 'true');
     if (!this._reopen) {
-      document.documentElement.classList.remove(this.options.classes.bodyActive);
+      document.documentElement.classList.remove(
+        this.options.classes.bodyActive
+      );
       !this.bodyLock ? bodyUnlock(timer) : null;
       this.isOpen = false;
     }
@@ -282,7 +340,7 @@ class Popup {
     }
     this.options.on.afterClose(this);
     document.dispatchEvent(
-      new CustomEvent("afterPopupClose", {
+      new CustomEvent('afterPopupClose', {
         detail: {
           popup: this,
         },
@@ -303,14 +361,21 @@ class Popup {
   // Отримання хешу
   _getHash() {
     if (this.options.hashSettings.location) {
-      this.hash = this.targetOpen.selector.includes("#") ? this.targetOpen.selector : this.targetOpen.selector.replace(".", "#");
+      this.hash = this.targetOpen.selector.includes('#')
+        ? this.targetOpen.selector
+        : this.targetOpen.selector.replace('.', '#');
     }
   }
   async _openToHash() {
-    const button = document.querySelector(`[${this.options.attributeOpenButton}="${window.location.hash}"]`);
+    const button = document.querySelector(
+      `[${this.options.attributeOpenButton}="${window.location.hash}"]`
+    );
 
     if (button) {
-      await this.getModal(button.href, button.getAttribute(this.options.attributeOpenButton)).then(() => {
+      await this.getModal(
+        button.href,
+        button.getAttribute(this.options.attributeOpenButton)
+      ).then(() => {
         this.open(button.getAttribute(this.options.attributeOpenButton));
       });
     }
@@ -327,10 +392,10 @@ class Popup {
   }
   // Встановлення хеша
   _setHash() {
-    history.pushState("", "", this.hash);
+    history.pushState('', '', this.hash);
   }
   _removeHash() {
-    history.pushState("", "", window.location.href.split("#")[0]);
+    history.pushState('', '', window.location.href.split('#')[0]);
   }
   _focusCatch(e) {
     const focusable = this.targetOpen.element.querySelectorAll(this._focusEl);

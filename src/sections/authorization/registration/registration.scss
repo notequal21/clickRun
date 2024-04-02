@@ -1,0 +1,193 @@
+.registration {
+  &__title {
+    margin: rem(30) 0 0;
+
+    @media (max-width: $mobile) {
+      margin: rem(60) 0 0;
+    }
+  }
+
+  &-form {
+    margin: rem(50) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    @media (max-width: $mobile) {
+      margin: rem(30) 0 0;
+    }
+
+    &__withdraw {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+
+      padding: rem(30) rem(40) rem(20);
+
+      border: rem(1.5) solid cl(gry-10);
+      border-radius: rem(40);
+
+      backdrop-filter: blur(rem(20));
+      background: cl(whte, 0.6);
+
+      @media (max-width: $mobile) {
+        border-radius: rem(20);
+        gap: rem(30);
+        padding: rem(30) rem(20) rem(40);
+        margin: 0 0 rem(30);
+      }
+
+      .lk_layout-withdraw__top {
+        gap: rem(18);
+
+        @media (max-width: $mobile) {
+          gap: rem(10);
+
+          &-col {
+            &:last-child {
+              margin: rem(-8) 0 0;
+            }
+          }
+
+          &-type {
+            .btn {
+              font-size: rem(12);
+            }
+          }
+        }
+      }
+
+      &-title {
+        font-weight: 500;
+        font-size: rem(21);
+        line-height: 140%;
+        letter-spacing: -0.04em;
+        color: cl(drk);
+
+        @media (max-width: $mobile) {
+          font-size: rem(14);
+        }
+      }
+    }
+
+    &__row {
+      display: flex;
+      gap: rem(20);
+
+      @media (max-width: $mobile) {
+        flex-direction: column;
+      }
+
+      .input {
+        flex: 0 0 calc(50% - rem(10));
+      }
+    }
+
+    &__button {
+      margin: rem(20) 0 0;
+
+      @media (max-width: $mobile) {
+        margin: rem(30) 0 0;
+      }
+    }
+  }
+
+  &-info {
+    margin: rem(30) 0 0;
+    display: flex;
+    gap: rem(40);
+
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+      gap: rem(30) rem(10);
+    }
+
+    &__item {
+      flex: 0 0 calc(25% - rem(30));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(10);
+
+      @media (max-width: $tablet) {
+        flex: 0 0 calc(50% - rem(5));
+      }
+
+      &-icon {
+        width: rem(82);
+        height: rem(82);
+
+        @media (max-width: $mobile) {
+          width: rem(32);
+          height: rem(32);
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &-title {
+        text-align: center;
+
+        @media (max-width: $mobile) {
+          font-size: rem(12);
+        }
+      }
+
+      &-text {
+        text-align: center;
+      }
+    }
+  }
+
+  &-descr {
+    margin: rem(110) 0 0;
+    display: flex;
+    gap: rem(60);
+
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+      gap: rem(40);
+    }
+
+    &__img {
+      position: relative;
+      flex: 0 0 calc(50% - rem(30));
+      border-radius: rem(40);
+      overflow: hidden;
+      padding: 0 0 29.5%;
+
+      @media (max-width: $mobile) {
+        flex: 0 0 100%;
+        padding: 0 0 60%;
+      }
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+      flex: 0 0 calc(50% - rem(30));
+
+      @media (max-width: $mobile) {
+        flex: 0 0 100%;
+        font-size: rem(16);
+      }
+
+      a {
+        color: cl(grn);
+      }
+    }
+  }
+}

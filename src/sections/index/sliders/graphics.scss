@@ -1,0 +1,64 @@
+.card_slider {
+  margin: rem(110) 0 0;
+
+  @media (max-width: $mobile) {
+    margin: rem(50) 0 0;
+  }
+
+  &__container {
+  }
+
+  &-top {
+    display: flex;
+    align-items: center;
+    gap: rem(40);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(6);
+    }
+
+    &__title {
+    }
+
+    &__link {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    &__nav {
+      display: flex;
+      margin: 0 0 0 auto;
+      gap: rem(2);
+
+      &-btn {
+      }
+    }
+  }
+
+  &-body {
+    margin: rem(20) 0 0;
+    overflow: hidden;
+
+    @media (max-width: $mobile) {
+      margin: rem(10) 0 0;
+    }
+
+    .item {
+      max-width: 100%;
+    }
+  }
+
+  &__link {
+    margin: rem(20) 0 0;
+    width: 100%;
+
+    display: none;
+
+    @media (max-width: $mobile) {
+      display: flex;
+    }
+  }
+}

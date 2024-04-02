@@ -1,3 +1,13 @@
-@import "../components/header/header";
+@import '../../node_modules/choices.js/src/styles/choices.scss';
 
-@import "../components/footer/footer";
+@import '../components/header/header';
+
+@import '../components/footer/footer';
+
+@import '../components/catalog/catalog';
+
+// Import sections styles
+@import '../sections/index.scss';
+
+@import "../components/menu/menu";
+@import "../components/reg_modal/reg_modal";

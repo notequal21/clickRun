@@ -1,2 +1,404 @@
 .header {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(rem(20));
+  background: cl(whte);
+  padding: rem(10) 0;
+
+  @media (max-width: $mobile) {
+    padding: rem(56) 0 rem(20);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 85%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: unset;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+  }
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+
+    &__logo {
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    gap: rem(46);
+    align-items: center;
+
+    @media (max-width: $tablet) {
+      gap: rem(24);
+    }
+
+    &__cart {
+      width: rem(64);
+      height: rem(64);
+      margin: 0 0 0 rem(-24);
+    }
+  }
+
+  &-body {
+    display: flex;
+    gap: rem(2);
+
+    &__catalog {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &-search {
+    flex: 1 1 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 rem(20) 0 0;
+    border: rem(1.5) solid #e7e7e9;
+    border-right: none;
+    border-radius: rem(20) 0 0 rem(20);
+
+    transition: all $time $tr;
+
+    // &::before {
+    //   content: '';
+    //   border: rem(1.5) solid #e7e7e9;
+    //   border-right: none;
+    //   border-radius: rem(20) 0 0 rem(20);
+    //   transition: all $time $tr;
+    //   position: absolute;
+    //   z-index: 0;
+    //   inset: 0;
+    // }
+
+    @media (max-width: $mobile) {
+      border: none;
+      background: cl(gry-7);
+      margin: 0;
+      border-radius: rem(20);
+    }
+
+    &:hover {
+      border-color: cl(grn);
+
+      .header-search__input {
+        &::placeholder {
+          color: cl(grn);
+        }
+      }
+    }
+
+    &._form-focus {
+      border-color: cl(grn);
+    }
+
+    &__tips {
+      position: absolute;
+      z-index: -1;
+      top: calc(100% + rem(10));
+      left: 0;
+      right: 0;
+
+      border: rem(1.5) solid cl(drk, 0.1);
+      border-radius: rem(20);
+      padding: rem(12);
+      background: cl(whte);
+
+      transform: translate(0, -50%);
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+
+      transition: all $time $tr;
+
+      &._open {
+        transform: translate(0);
+        opacity: 1;
+        pointer-events: unset;
+        user-select: unset;
+      }
+
+      .btn {
+        padding: rem(5) rem(19);
+        border-radius: rem(13);
+      }
+    }
+
+    &__select {
+      flex: 1 1 auto;
+      padding: 0 rem(10) 0 rem(30);
+
+      @media (max-width: $mobile) {
+        padding: 0 0 0 rem(14);
+      }
+
+      .choices {
+        padding: 0 !important;
+
+        &.is-open {
+          &::after {
+            transform: translate(0, -50%) rotate(-180deg);
+          }
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: 0;
+          background-image: url(../img/icons/select-arrow.svg);
+          background-position: center;
+          background-size: rem(18);
+          background-repeat: no-repeat;
+          flex: 0 0 auto;
+          width: rem(18);
+          height: rem(10);
+          border: none;
+          margin: 0 !important;
+          transition: all $time $tr;
+
+          @media (max-width: 400px) {
+            width: rem(14);
+            height: rem(8);
+          }
+        }
+
+        &__inner {
+          display: flex;
+          align-items: center;
+          padding: 0 rem(32) 0 0 !important;
+          border: none !important;
+          background-color: transparent !important;
+
+          font-family: 'Inter', sans-serif;
+          font-weight: 400;
+          font-size: rem(16);
+          line-height: 150%;
+          color: cl(gry-40);
+
+          @media (max-width: 400px) {
+            padding: 0 rem(20) 0 0 !important;
+            max-width: rem(64);
+
+            .choices__item {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          .choices__list {
+            padding: 0;
+
+            .choices__item {
+              white-space: nowrap;
+            }
+          }
+        }
+
+        &__list.choices__list--dropdown {
+          width: auto;
+          top: calc(100% + rem(24));
+          left: rem(-30);
+          color: unset;
+          border: rem(1.5) solid cl(grn);
+          border-radius: rem(20);
+          padding: rem(11);
+
+          @media (max-width: $mobile) {
+            top: calc(100% + rem(16));
+            left: rem(-14);
+          }
+
+          .choices__list {
+            display: flex;
+            flex-direction: column;
+            gap: rem(2);
+            max-height: rem(400);
+          }
+
+          .choices__item {
+            white-space: nowrap;
+            padding: rem(20);
+
+            border: rem(1.5) solid transparent;
+            border-radius: rem(13);
+
+            font-weight: 400;
+            font-size: rem(16);
+            line-height: 150%;
+
+            transition: all $time $tr;
+
+            @media (max-width: $mobile) {
+              padding: rem(12);
+            }
+
+            &.is-highlighted {
+              background: transparent;
+              color: cl(grn);
+            }
+
+            &.is-selected {
+              border-color: cl(gry-10);
+              color: cl(grn);
+            }
+          }
+        }
+      }
+    }
+
+    &__input {
+      flex: 1 1 100%;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      padding: 0 rem(20);
+
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: 150%;
+
+      transition: all $time $tr;
+
+      @media (max-width: $mobile) {
+        font-size: rem(14);
+      }
+
+      @media (max-width: 400px) {
+        padding: 0 rem(10);
+      }
+
+      &::placeholder {
+        transition: all $time $tr;
+      }
+    }
+
+    &__close {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translate(50%, -50%);
+      right: rem(67);
+
+      @media (max-width: $mobile) {
+        right: rem(72);
+      }
+
+      @media (max-width: 400px) {
+        right: rem(58);
+      }
+
+      opacity: 0;
+      pointer-events: none;
+      user-select: none;
+
+      transition: all $time $tr;
+
+      &._visible {
+        opacity: 1;
+        pointer-events: unset;
+        user-select: unset;
+      }
+
+      svg {
+        width: rem(32);
+        height: rem(32);
+
+        @media (max-width: 400px) {
+          width: rem(28);
+          height: rem(28);
+        }
+
+        path {
+          stroke: cl(gry-40);
+          transition: all $time $tr;
+          stroke-opacity: 1;
+        }
+      }
+
+      &:hover {
+        svg {
+          path {
+            stroke: cl(gry-80);
+          }
+        }
+      }
+    }
+
+    &__button {
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+      margin: rem(-2) rem(-20) rem(-2) rem(-1.5);
+      display: flex;
+      width: rem(70);
+      height: rem(65);
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      background: cl(grn);
+      border-radius: rem(20);
+      border: rem(1.5) solid transparent;
+
+      transition: all $time $tr;
+
+      @media (max-width: $mobile) {
+        background: transparent;
+        height: 100%;
+        width: rem(54);
+        height: rem(54);
+        margin: 0;
+        padding: rem(10) rem(15) rem(10) rem(5);
+      }
+
+      @media (max-width: 400px) {
+        width: rem(46);
+        height: rem(46);
+        padding: rem(10) rem(10) rem(10) rem(10);
+      }
+
+      svg {
+        width: rem(32);
+        height: rem(32);
+
+        path {
+          transition: all $time $tr;
+
+          @media (max-width: $mobile) {
+            stroke: cl(grn);
+          }
+        }
+      }
+
+      &:hover {
+        background-color: cl(whte);
+        border-color: #e7e7e9;
+        // border-radius: rem(15);
+
+        svg {
+          path {
+            stroke: cl(grn);
+          }
+        }
+      }
+    }
+  }
 }

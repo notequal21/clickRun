@@ -1,0 +1,98 @@
+.authorization {
+  &_recovery {
+    .authorization-body__img {
+      height: rem(334);
+    }
+  }
+
+  &-body {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      justify-content: unset;
+      gap: rem(30);
+    }
+
+    &__img {
+      // position: relative;
+      border-radius: rem(40);
+      // padding: 0 0 42%;
+      flex: 0 0 calc(50%);
+      overflow: hidden;
+      height: auto;
+
+      @media (max-width: $tablet) {
+        flex: 0 0 auto;
+        position: relative;
+
+        height: 0;
+        padding: 0 0 51%;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @media (max-width: $tablet) {
+          position: absolute;
+          inset: 0;
+        }
+      }
+    }
+
+    &__col {
+      flex: 0 0 calc(50%);
+
+      padding: 0 rem(60);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $tablet) {
+        flex: 0 0 auto;
+      }
+
+      @media (max-width: $mobile) {
+        padding: 0;
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+
+      width: 100%;
+      max-width: rem(420);
+
+      @media (max-width: $mobile) {
+        &_btns {
+          gap: rem(8);
+        }
+      }
+
+      &-forgot {
+        margin: rem(-10) 0 0 auto;
+      }
+
+      &-link {
+        padding: rem(16) rem(30);
+        gap: rem(20);
+        text-align: left;
+
+        @media (max-width: $pc) {
+          padding: rem(16) rem(20);
+        }
+      }
+
+      &-btn {
+        margin: rem(34) 0 0;
+      }
+    }
+  }
+}
