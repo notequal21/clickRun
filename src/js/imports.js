@@ -10,3 +10,4 @@ import '../components/searchTips/searchTips.js';
 import '../components/balanceTab/balanceTab.js';
 import '../components/sortUpDown/sortUpDown.js';
 import '../components/watchMore/watchMore.js';
+import '../components/buyBtn/buyBtn.js';
