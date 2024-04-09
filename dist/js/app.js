@@ -12265,6 +12265,13 @@
             const nav = document.querySelector(".mobile_nav");
             const menu = document.querySelector(".menu");
             const openMenuBtn = document.querySelector(".mobile_nav__item_menu");
+            window.onscroll = function() {
+                myFunction();
+            };
+            function myFunction() {
+                if (window.pageYOffset > 50) menu.classList.add("_sticky"); else menu.classList.remove("_sticky");
+            }
+            window.addEventListener("scroll", myFunction);
             openMenuBtn.addEventListener("click", (() => {
                 if (menu.classList.contains("open")) {
                     menu.classList.remove("open");
@@ -12386,6 +12393,16 @@
             counterBtnArr[1].addEventListener("click", (() => {
                 if (counterInput.value > 0) counterInput.value = +counterInput.value - 1;
                 if (counterInput.value <= 0) closeCounter();
+            }));
+        }
+        if (document.querySelector("[data-current-stat]")) {
+            const statItems = document.querySelectorAll("[data-current-stat]");
+            const starFill = `<img src="./img/icons/star.svg" alt="">`;
+            const starFillHalf = `<img src="./img/icons/star-0.5.svg" alt="">`;
+            const starNone = `<img src="./img/icons/star-grey.svg" alt="">`;
+            statItems.forEach((item => {
+                const count = +item.dataset.currentStat;
+                if (Number.isInteger(count)) item.innerHTML = `${starFill.repeat(Math.floor(count))}${starNone.repeat(5 - count)}`; else item.innerHTML = `${starFill.repeat(Math.floor(count))}${starFillHalf}${starNone.repeat(5 - Math.round(count))}`;
             }));
         }
         window["FLS"] = true;

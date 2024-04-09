@@ -28,20 +28,17 @@
     margin: rem(50) 0 0;
     display: flex;
     gap: rem(2);
-
-    @media (max-width: $mobile) {
-      flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
 
     &__item {
-      flex: 0 0 calc(33.333% - rem(1.33));
+      flex: 1 1 calc(33.333% - rem(1.33));
 
       @media (max-width: $mobile) {
-        flex: 0 0 calc(50% - rem(1));
+        flex: 1 1 calc(50% - rem(1));
 
-        &:nth-child(3) {
-          flex: 1 1 100%;
-        }
+        // &:nth-child(3) {
+        //   flex: 1 1 100%;
+        // }
       }
     }
   }

@@ -100,7 +100,7 @@
       }
 
       &-item {
-        flex: 1 1 auto;
+        flex: 0 0 calc(16.666% - rem(1.666));
 
         @media (max-width: $tablet) {
           flex: 0 0 calc(33.333% - rem(1.333));

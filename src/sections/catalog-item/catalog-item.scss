@@ -38,6 +38,7 @@
           // overflow: hidden;
 
           @media (max-width: $tablet) {
+            position: relative;
             height: 0;
             padding: 0 0 70%;
           }

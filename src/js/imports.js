@@ -11,3 +11,4 @@ import '../components/balanceTab/balanceTab.js';
 import '../components/sortUpDown/sortUpDown.js';
 import '../components/watchMore/watchMore.js';
 import '../components/buyBtn/buyBtn.js';
+import '../components/reviewsStars/reviewsStars.js';

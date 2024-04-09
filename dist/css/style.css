@@ -767,6 +767,10 @@ body::after {
   gap: 1.25rem;
 }
 
+.item:hover .item-body__title {
+  color: var(--color-grn);
+}
+
 .item__img {
   position: relative;
   border-radius: 1.25rem;
@@ -804,6 +808,8 @@ body::after {
   -webkit-box-orient: vertical;
   line-clamp: 1;
   box-orient: vertical;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .item-body__price {
@@ -2441,9 +2447,9 @@ body::after {
 }
 
 .main-body__category-item {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(16.666% - 0.104125rem);
+          flex: 0 0 calc(16.666% - 0.104125rem);
 }
 
 .main-body__img {
@@ -4360,12 +4366,14 @@ body::after {
   display: -ms-flexbox;
   display: flex;
   gap: 0.125rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .graphic-category__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(33.333% - 0.083125rem);
-          flex: 0 0 calc(33.333% - 0.083125rem);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 calc(33.333% - 0.083125rem);
+          flex: 1 1 calc(33.333% - 0.083125rem);
 }
 
 .graphic-filter {
@@ -4545,6 +4553,10 @@ body::after {
       -ms-user-select: unset;
           user-select: unset;
   visibility: visible;
+}
+
+.menu._sticky {
+  padding: 1.875rem 0 8.125rem;
 }
 
 .menu-category {
@@ -5149,6 +5161,7 @@ body::after {
   }
 
   .catalog_item-body__slider-big .swiper-slide {
+    position: relative;
     height: 0;
     padding: 0 0 70%;
   }
@@ -6119,21 +6132,10 @@ body::after {
     margin: 3.75rem 0 0;
   }
 
-  .graphic-category {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
   .graphic-category__item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(50% - 0.0625rem);
-            flex: 0 0 calc(50% - 0.0625rem);
-  }
-
-  .graphic-category__item:nth-child(3) {
     -webkit-box-flex: 1;
-        -ms-flex: 1 1 100%;
-            flex: 1 1 100%;
+        -ms-flex: 1 1 calc(50% - 0.0625rem);
+            flex: 1 1 calc(50% - 0.0625rem);
   }
 
   .graphic-filter {

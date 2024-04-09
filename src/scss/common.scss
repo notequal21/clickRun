@@ -434,6 +434,12 @@
     border-radius: rem(20);
   }
 
+  &:hover {
+    .item-body__title {
+      color: cl(grn);
+    }
+  }
+
   &__img {
     position: relative;
     border-radius: rem(20);
@@ -471,6 +477,7 @@
       -webkit-box-orient: vertical;
       line-clamp: 1;
       box-orient: vertical;
+      transition: all $time $tr;
     }
 
     &__price {
