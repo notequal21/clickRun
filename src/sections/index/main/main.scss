@@ -92,19 +92,21 @@
 
     &__category {
       margin: rem(50) 0 0;
-      display: flex;
-      gap: rem(2);
+      overflow: hidden;
+      // display: flex;
+      // gap: rem(2);
 
       @media (max-width: $tablet) {
         flex-wrap: wrap;
       }
 
       &-item {
-        flex: 0 0 calc(16.666% - rem(1.666));
+        width: 100%;
+        // flex: 0 0 calc(16.666% - rem(1.666));
 
-        @media (max-width: $tablet) {
-          flex: 0 0 calc(33.333% - rem(1.333));
-        }
+        // @media (max-width: $tablet) {
+        //   flex: 0 0 calc(33.333% - rem(1.333));
+        // }
       }
     }
 

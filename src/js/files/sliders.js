@@ -69,6 +69,26 @@ window.addEventListener('load', function (e) {
     },
   });
 
+  createSlider('.main-body__category', {
+    slidesPerView: 3,
+    autoHeight: false,
+    spaceBetween: 2,
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+      },
+      1100: {
+        slidesPerView: 6,
+      },
+      // 920: {
+      //   slidesPerView: 4,
+      // },
+      // 1100: {
+      //   slidesPerView: 5,
+      // },
+    },
+  });
+
   if (document.querySelector('.card_slider')) {
     const blockArr = document.querySelectorAll('.card_slider');
 

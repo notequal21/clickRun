@@ -12142,6 +12142,19 @@
                     clickable: true
                 }
             });
+            createSlider(".main-body__category", {
+                slidesPerView: 3,
+                autoHeight: false,
+                spaceBetween: 2,
+                breakpoints: {
+                    768: {
+                        slidesPerView: 4
+                    },
+                    1100: {
+                        slidesPerView: 6
+                    }
+                }
+            });
             if (document.querySelector(".card_slider")) {
                 const blockArr = document.querySelectorAll(".card_slider");
                 blockArr.forEach((item => {

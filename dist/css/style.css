@@ -2440,16 +2440,11 @@ body::after {
 
 .main-body__category {
   margin: 3.125rem 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.125rem;
+  overflow: hidden;
 }
 
 .main-body__category-item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(16.666% - 0.104125rem);
-          flex: 0 0 calc(16.666% - 0.104125rem);
+  width: 100%;
 }
 
 .main-body__img {
@@ -5120,12 +5115,6 @@ body::after {
   .main-body__category {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-
-  .main-body__category-item {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33.333% - 0.0833125rem);
-            flex: 0 0 calc(33.333% - 0.0833125rem);
   }
 
   .main-body__img {
