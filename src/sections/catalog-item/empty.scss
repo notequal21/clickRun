@@ -1,0 +1,40 @@
+.reviews {
+  &-empty {
+    margin: rem(20) 0 0;
+    display: flex;
+    gap: rem(20);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: rem(1.5) solid rgba(20, 14, 37, 0.1);
+    border-radius: rem(40);
+
+    padding: rem(107) rem(50) rem(157);
+
+    @media (max-width: $mobile) {
+      padding: rem(20) rem(15) rem(20);
+    }
+
+    &__icon {
+      width: rem(172);
+      height: rem(172);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &__text {
+      text-align: center;
+    }
+    &__btn {
+      padding: rem(15) rem(70);
+
+      @media (max-width: $mobile) {
+        padding: rem(15) rem(20);
+        width: 100%;
+      }
+    }
+  }
+}

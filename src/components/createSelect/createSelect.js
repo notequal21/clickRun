@@ -1,6 +1,6 @@
 import Choices from 'choices.js';
 
-if (document.querySelector('.lk_layout-create__select')) {
+if (document.querySelector('.lk_layout-create__select select')) {
   const select = document.querySelector('.lk_layout-create__select select');
 
   const choices = new Choices(select, {
