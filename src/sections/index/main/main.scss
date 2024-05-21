@@ -5,6 +5,18 @@
   &-body {
     position: relative;
 
+    @media (max-height: 900px) {
+      display: flex;
+      flex-direction: column;
+      min-height: calc(100vh - rem(180));
+      padding: 0 0 rem(40);
+    }
+    @media (max-width: $tablet) {
+      padding: 0;
+      display: block;
+      min-height: auto;
+    }
+
     @media (max-width: $mobile) {
       padding: rem(288) 0 0;
     }
@@ -17,7 +29,15 @@
       overflow: hidden;
       padding: rem(100) 0 rem(20);
 
+      @media (max-height: 900px) {
+        padding: 0;
+        min-height: auto;
+        margin: 0 0 auto;
+      }
+
       @media (max-width: $tablet) {
+        padding: rem(100) 0 rem(20);
+        min-height: rem(510);
         margin: 0 rem(250) 0 0;
       }
       @media (max-width: $mobile) {
@@ -120,6 +140,12 @@
 
       width: rem(1160);
       height: rem(868);
+
+      @media (max-height: 900px) {
+        width: rem(1000);
+        right: rem(-200);
+        height: auto;
+      }
 
       @media (max-width: $pc) {
         right: rem(-400);
