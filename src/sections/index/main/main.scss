@@ -5,7 +5,7 @@
   &-body {
     position: relative;
 
-    @media (max-height: 900px) {
+    @media (max-height: 900px) and (min-width: $tablet) {
       display: flex;
       flex-direction: column;
       min-height: calc(100vh - rem(180));
@@ -29,7 +29,7 @@
       overflow: hidden;
       padding: rem(100) 0 rem(20);
 
-      @media (max-height: 900px) {
+      @media (max-height: 900px) and (min-width: $tablet) {
         padding: 0;
         min-height: auto;
         margin: 0 0 auto;
@@ -141,7 +141,7 @@
       width: rem(1160);
       height: rem(868);
 
-      @media (max-height: 900px) {
+      @media (max-height: 900px) and (min-width: $tablet) {
         width: rem(1000);
         right: rem(-200);
         height: auto;

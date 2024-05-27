@@ -179,6 +179,10 @@ cite {
   font-style: normal;
 }
 
+html {
+  font-size: 0.836vw;
+}
+
 body {
   color: var(--color-drk);
 }
@@ -244,11 +248,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 [class*=__container] {
-  --pad: 20px;
   max-width: calc(83.125rem);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0 var(--pad);
+  padding: 0 1.25rem;
   margin: 0 auto;
 }
 
@@ -5132,6 +5135,32 @@ body::after {
   display: none !important;
 }
 
+@media (max-height: 900px) and (min-width: 61.99875em) {
+  .main-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: calc(100vh - 11.25rem);
+    padding: 0 0 2.5rem;
+  }
+
+  .main-body__slider {
+    padding: 0;
+    min-height: auto;
+    margin: 0 0 auto;
+  }
+
+  .main-body__img {
+    width: 62.5rem;
+    right: -12.5rem;
+    height: auto;
+  }
+}
+
 @media (min-width: 640px) {
   .choices__list--dropdown .choices__item--selectable,
   .choices__list[aria-expanded] .choices__item--selectable {
@@ -5556,6 +5585,10 @@ body::after {
 }
 
 @media (max-width: 47.99875em) {
+  html {
+    font-size: 4vw;
+  }
+
   .popup {
     padding: 1.875rem 0.625rem;
   }
@@ -6431,31 +6464,5 @@ body::after {
 @media (max-width: 29.99875em) {
   .lk_layout-create__select .category_select__dropdown ._dropdown-item__list-item {
     padding: 0 0 0 1.25rem;
-  }
-}
-
-@media (max-height: 900px) {
-  .main-body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    min-height: calc(100vh - 11.25rem);
-    padding: 0 0 2.5rem;
-  }
-
-  .main-body__slider {
-    padding: 0;
-    min-height: auto;
-    margin: 0 0 auto;
-  }
-
-  .main-body__img {
-    width: 62.5rem;
-    right: -12.5rem;
-    height: auto;
   }
 }
