@@ -3,7 +3,14 @@
 */
 
 import Swiper from 'swiper';
-import { A11y, Pagination, Navigation, Thumbs } from 'swiper/modules';
+import {
+  A11y,
+  Pagination,
+  Navigation,
+  Thumbs,
+  EffectFade,
+  Controller,
+} from 'swiper/modules';
 /*
 Navigation, Pagination, Autoplay, 
 EffectFade, Lazy, Manipulation
@@ -59,8 +66,16 @@ window.addEventListener('load', function (e) {
     },
   });
 
-  createSlider('.main-body__slider', {
-    modules: [Pagination],
+  const mainImg = new Swiper('.main-body__img', {
+    modules: [EffectFade, Controller],
+    effect: 'fade',
+    slidesPerView: 1,
+    watchSlidesProgress: true,
+    spaceBetween: 0,
+  });
+
+  const mainSlider = new Swiper('.main-body__slider', {
+    modules: [Pagination, Controller],
     slidesPerView: 1,
     autoHeight: false,
     pagination: {
@@ -69,10 +84,23 @@ window.addEventListener('load', function (e) {
     },
   });
 
+  // createSlider('.main-body__slider', {
+  //   modules: [Pagination],
+  //   slidesPerView: 1,
+  //   autoHeight: false,
+  //   pagination: {
+  //     el: '.main-body__pagination',
+  //     clickable: true,
+  //   },
+  // });
+
+  mainSlider.controller.control = mainImg;
+  mainImg.controller.control = mainSlider;
+
   createSlider('.main-body__category', {
     slidesPerView: 3,
     autoHeight: false,
-    spaceBetween: 2,
+    spaceBetween: 10,
     breakpoints: {
       768: {
         slidesPerView: 4,
@@ -100,7 +128,7 @@ window.addEventListener('load', function (e) {
       createSlider(slider, {
         modules: [Navigation],
         slidesPerView: 2,
-        spaceBetween: 2,
+        spaceBetween: 10,
         navigation: {
           prevEl: sliderPrevBtn,
           nextEl: sliderNextBtn,

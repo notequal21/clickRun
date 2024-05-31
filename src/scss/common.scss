@@ -347,6 +347,7 @@
 
     path {
       transition: all $time $tr;
+      stroke: cl(blck);
 
       @media (max-width: $mobile) {
         stroke: cl(grn);

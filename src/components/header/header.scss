@@ -34,6 +34,13 @@
     }
 
     &__logo {
+      height: rem(64);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
   }
 
@@ -47,9 +54,35 @@
     }
 
     &__cart {
-      width: rem(64);
-      height: rem(64);
+      width: auto;
+      height: auto;
+      display: flex;
+      gap: rem(10);
       margin: 0 0 0 rem(-24);
+      padding: 0 rem(20);
+      border: none;
+
+      &:hover {
+        border: none;
+        .header-buttons__cart-count {
+          color: cl(grn);
+        }
+      }
+
+      img {
+        flex: 0 0 auto;
+        width: rem(64);
+        height: rem(64);
+      }
+
+      &-count {
+        color: cl(blck);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 150%;
+        text-align: center;
+        transition: all $time $tr;
+      }
     }
   }
 

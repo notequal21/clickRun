@@ -102,17 +102,23 @@
     &__items {
       margin: rem(40) 0 0;
       display: flex;
-      gap: rem(2);
+      gap: rem(10);
+      // gap: rem(2);
 
       @media (max-width: $mobile) {
         flex-wrap: wrap;
       }
 
       .category {
-        flex: 0 0 calc(25% - rem(1.5));
+        // flex: 0 0 calc(25% - rem(1.5));
+        flex: 0 0 calc(25% - rem(7.5));
+
+        // @media (max-width: $mobile) {
+        //   flex: 0 0 calc(50% - rem(1));
+        // }
 
         @media (max-width: $mobile) {
-          flex: 0 0 calc(50% - rem(1));
+          flex: 0 0 calc(50% - rem(5));
         }
       }
     }

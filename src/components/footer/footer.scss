@@ -36,12 +36,12 @@
 
       img {
         width: 100%;
-        height: rem(24);
+        height: rem(55);
         object-fit: contain;
         object-position: left;
 
         @media (max-width: $mobile) {
-          height: rem(22);
+          height: rem(35);
         }
       }
     }

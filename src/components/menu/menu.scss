@@ -124,6 +124,16 @@
         object-fit: contain;
       }
 
+      &._logo {
+        height: rem(40);
+        width: 100%;
+
+        img {
+          width: 100%;
+          object-position: center bottom;
+        }
+      }
+
       &_menu {
         display: block;
         position: relative;

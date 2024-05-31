@@ -27,14 +27,14 @@
   &-category {
     margin: rem(50) 0 0;
     display: flex;
-    gap: rem(2);
+    gap: rem(10);
     flex-wrap: wrap;
 
     &__item {
-      flex: 1 1 calc(33.333% - rem(1.33));
+      flex: 1 1 calc(33.333% - rem(6.66));
 
       @media (max-width: $mobile) {
-        flex: 1 1 calc(50% - rem(1));
+        flex: 1 1 calc(50% - rem(5));
 
         // &:nth-child(3) {
         //   flex: 1 1 100%;
@@ -58,20 +58,20 @@
     display: flex;
     flex-wrap: wrap;
     margin: rem(40) 0 0;
-    gap: rem(40) rem(2);
+    gap: rem(40) rem(10);
 
     &__item {
-      flex: 0 0 calc(20% - rem(1.6));
+      flex: 0 0 calc(20% - rem(8));
       max-width: 100%;
 
       @media (max-width: $pc) {
-        flex: 0 0 calc(25% - rem(1.5));
+        flex: 0 0 calc(25% - rem(0.5));
       }
       @media (max-width: $tablet) {
-        flex: 0 0 calc(33.333% - rem(1.333));
+        flex: 0 0 calc(33.333% - rem(6.666));
       }
       @media (max-width: $mobile) {
-        flex: 0 0 calc(50% - rem(1));
+        flex: 0 0 calc(50% - rem(5));
       }
       @media (max-width: 390px) {
         flex: 0 0 calc(100%);

@@ -5,12 +5,12 @@
   &-body {
     position: relative;
 
-    @media (max-height: 900px) and (min-width: $tablet) {
-      display: flex;
-      flex-direction: column;
-      min-height: calc(100vh - rem(180));
-      padding: 0 0 rem(40);
-    }
+    // @media (max-height: 900px) and (min-width: $tablet) {
+    //   display: flex;
+    //   flex-direction: column;
+    //   min-height: calc(100vh - rem(180));
+    //   padding: 0 0 rem(40);
+    // }
     @media (max-width: $tablet) {
       padding: 0;
       display: block;
@@ -29,11 +29,11 @@
       overflow: hidden;
       padding: rem(100) 0 rem(20);
 
-      @media (max-height: 900px) and (min-width: $tablet) {
-        padding: 0;
-        min-height: auto;
-        margin: 0 0 auto;
-      }
+      // @media (max-height: 900px) and (min-width: $tablet) {
+      //   padding: 0;
+      //   min-height: auto;
+      //   margin: 0 0 auto;
+      // }
 
       @media (max-width: $tablet) {
         padding: rem(100) 0 rem(20);
@@ -141,11 +141,11 @@
       width: rem(1160);
       height: rem(868);
 
-      @media (max-height: 900px) and (min-width: $tablet) {
-        width: rem(1000);
-        right: rem(-200);
-        height: auto;
-      }
+      // @media (max-height: 900px) and (min-width: $tablet) {
+      //   width: rem(1000);
+      //   right: rem(-200);
+      //   height: auto;
+      // }
 
       @media (max-width: $pc) {
         right: rem(-400);
@@ -159,7 +159,8 @@
       }
 
       @media (max-width: $mobile) {
-        width: auto;
+        // width: auto;
+        width: 100%;
         height: rem(370);
         left: 50%;
         right: auto;
@@ -173,7 +174,7 @@
         object-fit: contain;
 
         @media (max-width: $mobile) {
-          width: auto;
+          // width: auto;
         }
       }
     }

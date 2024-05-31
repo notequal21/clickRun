@@ -1,5 +1,5 @@
 .reviews {
-  padding: rem(110) 0 rem(120);
+  padding: rem(110) 0 rem(50);
 
   @media (max-width: $mobile) {
     padding: rem(70) 0 rem(50);
@@ -25,6 +25,10 @@
     display: flex;
     flex-direction: column;
     gap: rem(20);
+
+    &:nth-child(1) {
+      flex: 1 1 auto;
+    }
 
     &__more {
       margin: rem(20) 0 0;
