@@ -96,6 +96,7 @@
   "dependencies": {
     "choices.js": "^10.2.0",
     "gulp-cheerio": "^1.0.0",
-    "isotope-layout": "^3.0.6"
+    "isotope-layout": "^3.0.6",
+    "viewport-units-buggyfill": "^0.6.2"
   }
 }

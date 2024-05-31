@@ -153,12 +153,12 @@
         right: rem(-400);
       }
 
-      @media (max-width: $tablet) {
-        width: rem(600);
-        height: auto;
-        top: 0;
-        right: rem(-200);
-      }
+      // @media (max-width: $tablet) {
+      //   width: rem(600);
+      //   height: auto;
+      //   top: 0;
+      //   right: rem(-200);
+      // }
 
       @media (max-width: $mobile) {
         // width: auto;

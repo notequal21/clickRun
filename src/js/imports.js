@@ -13,3 +13,4 @@ import '../components/watchMore/watchMore.js';
 import '../components/buyBtn/buyBtn.js';
 import '../components/reviewsStars/reviewsStars.js';
 import '../components/createSellerCategorySelect/createSellerCategorySelect.js';
+import '../components/remFix/remFix.js';
