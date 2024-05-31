@@ -127,6 +127,15 @@
     }
   }
 
+  // &_grey_fill {
+  //   border-color: cl(gry-10);
+  //   background: transparent;
+  //   color: cl(drk);
+  //   &:hover {
+  //     border-color: cl(grn);
+  //   }
+  // }
+
   &_svg {
     padding: rem(15) rem(40) rem(15) rem(30);
     gap: rem(10);
@@ -320,7 +329,8 @@
   gap: rem(10);
   border-radius: rem(40);
   padding: rem(20);
-  background: cl(gry-7);
+  // background: cl(gry-7);
+  background: #eeeeef;
   border: rem(1.5) solid transparent;
 
   text-align: center;

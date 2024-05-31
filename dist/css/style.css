@@ -684,7 +684,7 @@ body::after {
   gap: 0.625rem;
   border-radius: 2.5rem;
   padding: 1.25rem;
-  background: var(--color-gry-7);
+  background: #eeeeef;
   border: 0.09375rem solid transparent;
   text-align: center;
   font-weight: 400;
@@ -2492,6 +2492,8 @@ body::after {
 }
 
 .main-body__category {
+  position: relative;
+  z-index: 2;
   margin: 3.125rem 0 0;
   overflow: hidden;
 }
