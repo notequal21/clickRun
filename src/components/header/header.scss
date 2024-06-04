@@ -35,6 +35,9 @@
 
     &__logo {
       height: rem(64);
+      width: 100%;
+      max-width: rem(130);
+      flex: 0 0 rem(130);
 
       img {
         width: 100%;

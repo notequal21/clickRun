@@ -113,7 +113,11 @@
       margin: 0 auto;
 
       li {
-        flex: 0 0 calc(25% - rem(12));
+        flex: 1 1 calc(25% - rem(12));
+
+        &._logo {
+          flex: 0 0 rem(140);
+        }
       }
     }
 
@@ -125,12 +129,30 @@
       }
 
       &._logo {
-        height: rem(40);
+        height: auto;
         width: 100%;
+        max-width: rem(120);
 
         img {
           width: 100%;
           object-position: center bottom;
+        }
+      }
+
+      &._cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(10);
+
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 150%;
+        color: cl(grn);
+
+        img {
+          width: auto;
         }
       }
 
