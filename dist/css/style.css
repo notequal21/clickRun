@@ -237,16 +237,6 @@ body::-webkit-scrollbar-thumb {
   min-width: 0;
 }
 
-::-moz-selection {
-  color: var(--color-primary);
-  background: var(--color-bg);
-}
-
-::selection {
-  color: var(--color-primary);
-  background: var(--color-bg);
-}
-
 [class*=__container] {
   max-width: calc(83.125rem);
   -webkit-box-sizing: border-box;
@@ -1698,7 +1688,7 @@ body::after {
 /* =====  End of Choices  ====== */
 
 .header {
-  position: absolute;
+  position: fixed;
   z-index: 10;
   top: 0;
   left: 0;
@@ -2253,7 +2243,7 @@ body::after {
 
 .catalog {
   position: fixed;
-  z-index: 11;
+  z-index: 9;
   inset: 0;
   background: var(--color-whte);
   pointer-events: none;
@@ -4825,10 +4815,6 @@ body::after {
       -ms-user-select: unset;
           user-select: unset;
   visibility: visible;
-}
-
-.menu._sticky {
-  padding: 1.875rem 0 8.125rem;
 }
 
 .menu-category {

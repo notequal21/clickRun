@@ -1,12 +1,16 @@
 if (document.querySelector('.catalog')) {
   const catalog = document.querySelector('.catalog');
+  const catalogBody = document.querySelector('.catalog-body');
   const catalogOpenBtn = document.querySelectorAll('._open-catalog');
   const catalogCloseBtn = catalog.querySelector('.catalog__close');
   const catalogColArr = catalog.querySelectorAll('.catalog-col');
   const catalogSubmenuArr = catalog.querySelectorAll('.catalog-col_submenu');
+  const body = document.querySelector('body');
+  const header = document.querySelector('.header');
 
   const closeCatalog = () => {
     catalog.classList.remove('_open');
+    body.classList.remove('lock');
     catalogSubmenuArr.forEach((item) => item.classList.remove('_open'));
     catalogColArr.forEach((item) => {
       const submenuItems = item.querySelectorAll('._submenu');
@@ -22,10 +26,18 @@ if (document.querySelector('.catalog')) {
 
   catalogOpenBtn.forEach((item) =>
     item.addEventListener('click', () => {
-      catalog.classList.add('_open');
+      if (catalog.classList.contains('_open')) {
+        closeCatalog();
+      } else {
+        catalog.classList.add('_open');
+        body.classList.add('lock');
 
-      document.addEventListener('keydown', escClose);
-      document.removeEventListener('keyup', escClose);
+        catalog.style.padding = `${header.scrollHeight / 1.15}px 0 0`;
+        catalogBody.style.height = `calc(100vh - ${header.scrollHeight / 1.15}px)`;
+
+        document.addEventListener('keydown', escClose);
+        document.removeEventListener('keyup', escClose);
+      }
     })
   );
 

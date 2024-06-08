@@ -15,9 +15,21 @@ if (document.querySelector('.category_select')) {
           const categorySelectDropdown = categorySelect.querySelector(
             '._dropdown-item__list'
           );
+          const categorySelectInputList =
+            categorySelect.querySelectorAll('._checkbox input');
+          const categorySelectInputListArr = Array.from(
+            categorySelectInputList
+          );
 
-          categorySelect.classList.remove('_open');
-          categorySelectDropdown.style.height = 0;
+          const isSomeInputChecked = categorySelectInputListArr.some(
+            (input) => input.checked
+          );
+
+          if (isSomeInputChecked) {
+          } else {
+            categorySelect.classList.remove('_open');
+            categorySelectDropdown.style.height = 0;
+          }
         });
       } else {
         item.classList.add('_open');

@@ -12813,12 +12813,16 @@
         }
         if (document.querySelector(".catalog")) {
             const catalog = document.querySelector(".catalog");
+            const catalogBody = document.querySelector(".catalog-body");
             const catalogOpenBtn = document.querySelectorAll("._open-catalog");
             const catalogCloseBtn = catalog.querySelector(".catalog__close");
             const catalogColArr = catalog.querySelectorAll(".catalog-col");
             const catalogSubmenuArr = catalog.querySelectorAll(".catalog-col_submenu");
+            const body = document.querySelector("body");
+            const header = document.querySelector(".header");
             const closeCatalog = () => {
                 catalog.classList.remove("_open");
+                body.classList.remove("lock");
                 catalogSubmenuArr.forEach((item => item.classList.remove("_open")));
                 catalogColArr.forEach((item => {
                     const submenuItems = item.querySelectorAll("._submenu");
@@ -12829,9 +12833,14 @@
                 if (e.key === "Escape") closeCatalog();
             };
             catalogOpenBtn.forEach((item => item.addEventListener("click", (() => {
-                catalog.classList.add("_open");
-                document.addEventListener("keydown", escClose);
-                document.removeEventListener("keyup", escClose);
+                if (catalog.classList.contains("_open")) closeCatalog(); else {
+                    catalog.classList.add("_open");
+                    body.classList.add("lock");
+                    catalog.style.padding = `${header.scrollHeight / 1.15}px 0 0`;
+                    catalogBody.style.height = `calc(100vh - ${header.scrollHeight / 1.15}px)`;
+                    document.addEventListener("keydown", escClose);
+                    document.removeEventListener("keyup", escClose);
+                }
             }))));
             catalogCloseBtn.addEventListener("click", closeCatalog);
             catalogColArr.forEach(((item, index) => {
@@ -13012,8 +13021,13 @@
                         selectDropdown.style.height = 0;
                         categorySelectList.forEach((categorySelect => {
                             const categorySelectDropdown = categorySelect.querySelector("._dropdown-item__list");
-                            categorySelect.classList.remove("_open");
-                            categorySelectDropdown.style.height = 0;
+                            const categorySelectInputList = categorySelect.querySelectorAll("._checkbox input");
+                            const categorySelectInputListArr = Array.from(categorySelectInputList);
+                            const isSomeInputChecked = categorySelectInputListArr.some((input => input.checked));
+                            if (isSomeInputChecked) ; else {
+                                categorySelect.classList.remove("_open");
+                                categorySelectDropdown.style.height = 0;
+                            }
                         }));
                     } else {
                         item.classList.add("_open");

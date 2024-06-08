@@ -1,6 +1,6 @@
 .catalog {
   position: fixed;
-  z-index: 11;
+  z-index: 9;
   inset: 0;
   background: cl(whte);
 
@@ -11,6 +11,8 @@
   transform: translate(0, -100%);
 
   transition: all $time $tr;
+
+  // padding: rem(100) 0 0;
 
   &._open {
     pointer-events: unset;
