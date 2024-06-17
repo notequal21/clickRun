@@ -640,6 +640,18 @@ body::after {
   color: var(--color-grn);
 }
 
+._radio-type._border .btn {
+  border-color: var(--color-gry-10);
+}
+
+._radio-type._border input:disabled + .btn {
+  cursor: default;
+}
+
+._radio-type._border input:disabled + .btn:hover {
+  color: var(--color-drk);
+}
+
 .filter input {
   pointer-events: none;
   -webkit-user-select: none;

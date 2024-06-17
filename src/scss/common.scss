@@ -303,6 +303,21 @@
       color: cl(grn);
     }
   }
+
+  &._border {
+    .btn {
+      border-color: cl(gry-10);
+      // color: cl(grn);
+    }
+    input {
+      &:disabled + .btn {
+        cursor: default;
+        &:hover {
+          color: cl(drk);
+        }
+      }
+    }
+  }
 }
 
 .filter {
