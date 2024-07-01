@@ -102,6 +102,16 @@
     padding: rem(15) rem(19);
   }
 
+  &:disabled {
+    cursor: default;
+    &.btn_grey {
+      &:hover {
+        color: cl(drk);
+        border-color: cl(gry-10);
+      }
+    }
+  }
+
   svg {
     path {
       transition: all $time $tr;
@@ -298,9 +308,21 @@
     top: -9999px;
     left: -9999px;
 
+    &:disabled + .btn {
+      cursor: default;
+
+      &:hover {
+        color: cl(drk);
+        border-color: transparent;
+      }
+    }
     &:checked + .btn {
       border-color: cl(gry-10);
       color: cl(grn);
+      &:hover {
+        border-color: cl(gry-10);
+        color: cl(grn);
+      }
     }
   }
 
@@ -601,6 +623,11 @@
     }
     &:focus {
       border-color: cl(grn);
+    }
+
+    &:disabled {
+      cursor: default;
+      border-color: cl(gry-10);
     }
 
     @media (max-width: $mobile) {

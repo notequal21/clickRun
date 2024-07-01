@@ -455,6 +455,15 @@ body::after {
   transition: all 0.3s ease-out;
 }
 
+.btn:disabled {
+  cursor: default;
+}
+
+.btn:disabled.btn_grey:hover {
+  color: var(--color-drk);
+  border-color: var(--color-gry-10);
+}
+
 .btn svg path {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -635,7 +644,21 @@ body::after {
   left: -9999px;
 }
 
+._radio-type input:disabled + .btn {
+  cursor: default;
+}
+
+._radio-type input:disabled + .btn:hover {
+  color: var(--color-drk);
+  border-color: transparent;
+}
+
 ._radio-type input:checked + .btn {
+  border-color: var(--color-gry-10);
+  color: var(--color-grn);
+}
+
+._radio-type input:checked + .btn:hover {
   border-color: var(--color-gry-10);
   color: var(--color-grn);
 }
@@ -928,6 +951,12 @@ body::after {
 .input input:focus,
 .input textarea:focus {
   border-color: var(--color-grn);
+}
+
+.input input:disabled,
+.input textarea:disabled {
+  cursor: default;
+  border-color: var(--color-gry-10);
 }
 
 .input textarea {
