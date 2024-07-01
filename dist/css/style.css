@@ -3274,6 +3274,12 @@ body::after {
   gap: 1.25rem;
 }
 
+.lk_layout-profile__row._single {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .lk_layout-profile__row-col {
   display: -webkit-box;
   display: -ms-flexbox;

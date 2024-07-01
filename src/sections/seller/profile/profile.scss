@@ -27,6 +27,10 @@
         flex-direction: column;
       }
 
+      &._single {
+        justify-content: flex-end;
+      }
+
       &-col {
         display: flex;
         flex-direction: column;
