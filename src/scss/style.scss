@@ -66,6 +66,14 @@ html {
   @media (max-width: $mobile) {
     font-size: 4vw;
   }
+
+  &.lock {
+    body {
+      overflow: hidden;
+      touch-action: none;
+      overscroll-behavior: none;
+    }
+  }
 }
 
 body {
