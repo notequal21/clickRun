@@ -54,6 +54,12 @@
         }
       }
 
+      .swiper-slide {
+        &:not(:first-child) {
+          display: none;
+        }
+      }
+
       &-item {
       }
     }
@@ -168,6 +174,12 @@
         right: auto;
         top: rem(-50);
         transform: translate(-50%, 0);
+      }
+
+      .swiper-slide {
+        &:not(:first-child) {
+          display: none;
+        }
       }
 
       img {

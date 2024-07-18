@@ -12712,7 +12712,15 @@
                 effect: "fade",
                 slidesPerView: 1,
                 watchSlidesProgress: true,
-                spaceBetween: 0
+                spaceBetween: 0,
+                on: {
+                    init: function() {
+                        const slides = document.querySelectorAll(".main-body__img .swiper-slide");
+                        slides.forEach((slide => {
+                            slide.style.display = "block";
+                        }));
+                    }
+                }
             });
             const mainSlider = new Swiper(".main-body__slider", {
                 modules: [ Pagination, Controller ],
@@ -12721,6 +12729,14 @@
                 pagination: {
                     el: ".main-body__pagination",
                     clickable: true
+                },
+                on: {
+                    init: function() {
+                        const slides = document.querySelectorAll(".main-body__slider .swiper-slide");
+                        slides.forEach((slide => {
+                            slide.style.display = "block";
+                        }));
+                    }
                 }
             });
             mainSlider.controller.control = mainImg;

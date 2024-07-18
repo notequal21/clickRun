@@ -64,6 +64,33 @@
   a {
     color: cl(grn);
   }
+
+  &._with-bold {
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(10);
+  li {
+    position: relative;
+    padding: 0 0 0 rem(20);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: rem(6);
+      top: rem(10);
+      width: rem(6);
+      height: rem(6);
+      border-radius: 50%;
+      background-color: cl(grn);
+    }
+  }
 }
 
 ._discount {

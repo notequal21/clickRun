@@ -72,6 +72,16 @@ window.addEventListener('load', function (e) {
     slidesPerView: 1,
     watchSlidesProgress: true,
     spaceBetween: 0,
+    on: {
+      init: function () {
+        const slides = document.querySelectorAll(
+          '.main-body__img .swiper-slide'
+        );
+        slides.forEach((slide) => {
+          slide.style.display = 'block';
+        });
+      },
+    },
   });
 
   const mainSlider = new Swiper('.main-body__slider', {
@@ -81,6 +91,16 @@ window.addEventListener('load', function (e) {
     pagination: {
       el: '.main-body__pagination',
       clickable: true,
+    },
+    on: {
+      init: function () {
+        const slides = document.querySelectorAll(
+          '.main-body__slider .swiper-slide'
+        );
+        slides.forEach((slide) => {
+          slide.style.display = 'block';
+        });
+      },
     },
   });
 
