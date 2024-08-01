@@ -2617,6 +2617,14 @@ body::after {
   height: 54.25rem;
 }
 
+.main-body__img .swiper-slide {
+  opacity: 0 !important;
+}
+
+.main-body__img .swiper-slide.swiper-slide-active {
+  opacity: 1 !important;
+}
+
 .main-body__img .swiper-slide:not(:first-child) {
   display: none;
 }
