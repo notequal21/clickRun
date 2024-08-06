@@ -419,6 +419,19 @@
       height: rem(32);
     }
 
+    g {
+      transition: all $time $tr;
+      fill: cl(blck);
+
+      @media (max-width: $mobile) {
+        fill: cl(grn);
+      }
+
+      path {
+        transition: none;
+      }
+    }
+
     path {
       transition: all $time $tr;
       stroke: cl(blck);
@@ -434,6 +447,9 @@
     border-color: cl(gry-10);
 
     svg {
+      g {
+        fill: cl(grn);
+      }
       path {
         stroke: cl(grn);
       }

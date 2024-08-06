@@ -785,6 +785,17 @@ body::after {
   height: 5.125rem;
 }
 
+.category svg g {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  fill: var(--color-blck);
+}
+
+.category svg g path {
+  -webkit-transition: none;
+  transition: none;
+}
+
 .category svg path {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -794,6 +805,10 @@ body::after {
 .category:hover {
   background: var(--color-whte);
   border-color: var(--color-gry-10);
+}
+
+.category:hover svg g {
+  fill: var(--color-grn);
 }
 
 .category:hover svg path {
@@ -3589,9 +3604,13 @@ body::after {
 }
 
 .lk_layout-history {
-  margin: 2.8125rem 0 0;
+  margin: -0.9375rem 0 0;
   border-collapse: separate;
   border-spacing: 0 0.625rem;
+}
+
+.lk_layout-history__title {
+  margin: 2.8125rem 0 0;
 }
 
 .lk_layout-history tr th,
@@ -5819,6 +5838,10 @@ body::after {
     height: 2rem;
   }
 
+  .category svg g {
+    fill: var(--color-grn);
+  }
+
   .category svg path {
     stroke: var(--color-grn);
   }
@@ -6333,12 +6356,21 @@ body::after {
 
   .lk_layout-history {
     border-spacing: 0;
+    margin: -3.4375rem 0 0;
+  }
+
+  .lk_layout-history__title {
     margin: 0;
   }
 
   .lk_layout-history tr th,
   .lk_layout-history tr td {
     font-size: 0.875rem;
+  }
+
+  .lk_layout-history tr th:nth-child(2),
+  .lk_layout-history tr td:nth-child(2) {
+    display: none;
   }
 
   .lk_layout-history thead {
@@ -6360,10 +6392,6 @@ body::after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     padding: 0.625rem 1.25rem;
     border: 0.09375rem dashed var(--color-gry-10);
     border-radius: 1.25rem;
@@ -6372,8 +6400,7 @@ body::after {
   .lk_layout-history tbody tr td {
     border: none !important;
     padding: 0 !important;
-    width: 100% !important;
-    text-align: left !important;
+    width: 50% !important;
   }
 
   .lk_layout-history tbody tr td:nth-child(2) {
