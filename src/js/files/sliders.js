@@ -72,6 +72,7 @@ window.addEventListener('load', function (e) {
     slidesPerView: 1,
     watchSlidesProgress: true,
     spaceBetween: 0,
+    speed: 1000,
     on: {
       init: function () {
         const slides = document.querySelectorAll(
@@ -81,6 +82,9 @@ window.addEventListener('load', function (e) {
           slide.style.display = 'block';
         });
       },
+
+      // navigationNext: (swiper) => swiper.speed(5000),
+      // navigationPrev: (swiper) => swiper.speed(5000),
     },
   });
 
@@ -88,6 +92,7 @@ window.addEventListener('load', function (e) {
     modules: [Pagination, Controller],
     slidesPerView: 1,
     autoHeight: false,
+    speed: 1000,
     pagination: {
       el: '.main-body__pagination',
       clickable: true,

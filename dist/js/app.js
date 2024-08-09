@@ -12713,6 +12713,7 @@
                 slidesPerView: 1,
                 watchSlidesProgress: true,
                 spaceBetween: 0,
+                speed: 1e3,
                 on: {
                     init: function() {
                         const slides = document.querySelectorAll(".main-body__img .swiper-slide");
@@ -12726,6 +12727,7 @@
                 modules: [ Pagination, Controller ],
                 slidesPerView: 1,
                 autoHeight: false,
+                speed: 1e3,
                 pagination: {
                     el: ".main-body__pagination",
                     clickable: true
