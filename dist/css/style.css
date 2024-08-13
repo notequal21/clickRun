@@ -2471,9 +2471,24 @@ body::after {
   border-color: transparent;
 }
 
+.catalog__btn svg g {
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  fill: var(--color-blck);
+}
+
+.catalog__btn svg g path {
+  -webkit-transition: none;
+  transition: none;
+}
+
 .catalog__btn:hover {
   border-color: transparent;
   color: var(--color-grn);
+}
+
+.catalog__btn:hover svg g {
+  fill: var(--color-grn);
 }
 
 .catalog__btn:hover svg path {
@@ -6109,6 +6124,10 @@ body::after {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+  }
+
+  .catalog__btn svg g {
+    fill: var(--color-grn);
   }
 
   .main-body {

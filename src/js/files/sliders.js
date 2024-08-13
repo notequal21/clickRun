@@ -10,6 +10,7 @@ import {
   Thumbs,
   EffectFade,
   Controller,
+  Autoplay,
 } from 'swiper/modules';
 /*
 Navigation, Pagination, Autoplay, 
@@ -72,7 +73,7 @@ window.addEventListener('load', function (e) {
     slidesPerView: 1,
     watchSlidesProgress: true,
     spaceBetween: 0,
-    speed: 1000,
+    speed: 2000,
     on: {
       init: function () {
         const slides = document.querySelectorAll(
@@ -89,10 +90,13 @@ window.addEventListener('load', function (e) {
   });
 
   const mainSlider = new Swiper('.main-body__slider', {
-    modules: [Pagination, Controller],
+    modules: [Pagination, Controller, Autoplay],
     slidesPerView: 1,
     autoHeight: false,
-    speed: 1000,
+    speed: 2000,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: '.main-body__pagination',
       clickable: true,
@@ -105,6 +109,9 @@ window.addEventListener('load', function (e) {
         slides.forEach((slide) => {
           slide.style.display = 'block';
         });
+      },
+      slideChange: function (swiper) {
+        mainImg.slideTo(swiper.activeIndex, 2000);
       },
     },
   });
@@ -119,8 +126,8 @@ window.addEventListener('load', function (e) {
   //   },
   // });
 
-  mainSlider.controller.control = mainImg;
-  mainImg.controller.control = mainSlider;
+  // mainSlider.controller.control = mainImg;
+  // mainImg.controller.control = mainSlider;
 
   createSlider('.main-body__category', {
     slidesPerView: 3,
