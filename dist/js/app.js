@@ -13067,7 +13067,8 @@
             selectArr.forEach((item => {
                 new scripts_choices(item, {
                     searchEnabled: false,
-                    itemSelectText: ""
+                    itemSelectText: "",
+                    shouldSort: false
                 });
             }));
         }

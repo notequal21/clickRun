@@ -7,6 +7,7 @@ if (document.querySelector('.header-search__select')) {
     const choices = new Choices(item, {
       searchEnabled: false,
       itemSelectText: '',
+      shouldSort: false,
     });
   });
 }
